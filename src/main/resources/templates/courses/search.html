@@ -1,0 +1,59 @@
+<div th:fragment="content">
+<div class="container py-5">
+    <h1 class="mb-4">Recherche de cours</h1>
+
+    <form action="/search" method="get" class="mb-5 position-relative">
+        <input type="text" name="query"
+               value="java"
+               placeholder="Rechercher un cours..."
+               class="form-control ps-5 pe-5 py-3 rounded-pill" />
+
+        <button type="submit" class="btn position-absolute top-0 start-0 mt-2 ms-3">🔍</button>
+
+        <a href="/search" class="btn position-absolute top-0 end-0 mt-2 me-3">❌</a>
+    </form>
+
+    <!-- Exemple de résultats (statiques) -->
+    <h5>Résultats pour "java"</h5>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="/images/java.jpg" class="card-img-top" alt="Java" />
+                <div class="card-body">
+                    <h5 class="card-title">Java débutant</h5>
+                    <p class="card-text">Apprenez Java de zéro avec des exercices pratiques.</p>
+                    <a href="/courses/1" class="btn btn-success">Voir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="/images/spring.jpg" class="card-img-top" alt="Spring" />
+                <div class="card-body">
+                    <h5 class="card-title">Spring Boot</h5>
+                    <p class="card-text">Créez des applications web robustes avec Spring Boot.</p>
+                    <a href="/courses/2" class="btn btn-success">Voir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exemple : aucun résultat trouvé -->
+    <!--
+    <div class="text-center py-5">
+        <h4>Aucun résultat trouvé pour "python"</h4>
+        <p>Essayez d'autres mots-clés ou explorez notre catalogue.</p>
+    </div>
+    -->
+
+    <!-- Exemple : pas encore de recherche -->
+    <!--
+    <div class="text-center py-5">
+        <h4>Que souhaitez-vous apprendre aujourd'hui ?</h4>
+        <p>Recherchez par thème, nom ou formateur.</p>
+    </div>
+    -->
+    </div>
+</div>
+

@@ -1,0 +1,122 @@
+<footer th:fragment="footer" class="footer bg-white shadow-sm text-center text-md-start py-5 mt-5">
+  <div class="container">
+    <div class="row gx-4 gy-3">
+
+      <!-- Logo and Description -->
+      <div class="col-12 col-md-3 d-flex flex-column align-items-center align-items-md-start ">
+        <a href="/" class="d-inline-block mb-3">
+          <img src="/images/logo-wbg.png" alt="logo" class="img-fluid" style="max-height: 100px;">
+        </a>
+        <p class="text-secondary small text-center text-md-start">
+          Plateforme de formation en ligne proposant des cours de qualité pour développer vos compétences et enrichir votre savoir.
+        </p>
+        <div class="d-flex gap-4 mt-4 fs-4 justify-content-center justify-content-md-start">
+          <a href="#" class="text-success hover-green"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-success hover-green"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="text-success hover-green"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-success hover-green"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <h6 class="text-success fw-semibold mb-3 pb-2">Explorer</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="/" class="text-muted text-decoration-none hover-green">Accueil</a></li>
+          <li class="mb-2"><a href="/courses" class="text-muted text-decoration-none hover-green">Cours</a></li>
+          <li class="mb-2"><a href="#" class="text-muted text-decoration-none hover-green">À propos</a></li>
+          <li><a href="#" class="text-muted text-decoration-none hover-green">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Catégories Développement Web -->
+      <div class="col-12 col-sm-6 col-md-3 ">
+        <h6 class="text-success fw-semibold mb-3 pb-2">Catégories</h6>
+        <ul class="list-unstyled small d-grid gap-1" style="grid-template-columns: 1fr;">
+          <li>
+            <a href="#" class="text-muted text-decoration-none hover-green d-flex align-items-center">
+              <i class="bi bi-code-slash me-2 text-success"></i>Développement Frontend
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-muted text-decoration-none hover-green d-flex align-items-center">
+              <i class="bi bi-server me-2 text-success"></i>Développement Backend
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-muted text-decoration-none hover-green d-flex align-items-center">
+              <i class="bi bi-database me-2 text-success"></i>Bases de données
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-muted text-decoration-none hover-green d-flex align-items-center">
+              <i class="bi bi-plug me-2 text-success"></i>API & Services Web
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-muted text-decoration-none hover-green d-flex align-items-center">
+              <i class="bi bi-cloud-upload me-2 text-success"></i>Déploiement & DevOps
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-muted text-decoration-none hover-green d-flex align-items-center">
+              <i class="bi bi-shield-lock me-2 text-success"></i>Sécurité Web
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-muted text-decoration-none hover-green d-flex align-items-center">
+              <i class="bi bi-speedometer2 me-2 text-success"></i>Performance & SEO
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-muted text-decoration-none hover-green d-flex align-items-center">
+              <i class="bi bi-brush me-2 text-success"></i>Design UI/UX
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-muted text-decoration-none hover-green d-flex align-items-center">
+              <i class="bi bi-diagram-3 me-2 text-success"></i>Conception UML & Méthodologies
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-12 col-md-3">
+        <h6 class="text-success fw-semibold mb-3 pb-2">Contact</h6>
+        <ul class="list-unstyled small text-muted">
+          <li class="d-flex align-items-start mb-3">
+            <i class="bi bi-pin-map text-success fs-5 me-3"></i>
+            <span>123 Avenue de la Formation, 75001 Paris</span>
+          </li>
+          <li class="d-flex align-items-center mb-3">
+            <i class="bi bi-telephone text-success fs-5 me-3"></i>
+            <span>+33 1 23 45 67 89</span>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="bi bi-envelope text-success fs-5 me-3"></i>
+            <span>contact@ulevite.fr</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr class="my-4" />
+
+    <p class="small text-center text-muted mb-0">
+      &copy;<span th:text="${#dates.format(#dates.createNow(),'yyyy')}"></span> Ulevite - Plateforme E-learning. Tous droits réservés.
+    </p>
+  </div>
+
+  <style>
+    .hover-green:hover {
+      color: #085e61 !important; /* vert bootstrap */
+      text-decoration: underline;
+    }
+    ul.list-unstyled li a {
+      transition: color 0.3s ease;
+    }
+   
+  </style>
+</footer>

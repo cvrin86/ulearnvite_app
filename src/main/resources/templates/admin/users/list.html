@@ -1,0 +1,46 @@
+<div th:fragment="content" class="container mt-4">
+  <h2 class="text-center mb-4">Liste des Utilisateurs</h2>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover shadow-sm">
+      <thead class="table-success">
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Rôle</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+          <td th:text="${user.username}"></td>
+          <td th:text="${user.email}"></td>
+          <td th:each="role : ${user.roleNames}">
+			        <span th:if="${role == 'ROLE_USER'}" class="label label-primary">Utilisateur</span>
+			        <span th:if="${role == 'ROLE_APPRENANT'}" class="label label-success">Apprenant</span>
+			        <span th:if="${role == 'ROLE_FORMATEUR'}" class="label label-warning">Formateur</span>
+			        <span th:if="${role == 'ROLE_ADMIN'}" class="label label-danger">Administrateur</span>
+			
+		  </td>
+          <td>
+            <a
+              th:href="@{/admin/users/edit/{id}(id=${user.id})}"
+              class="btn btn-warning btn-sm"
+            >
+              Modifier
+            </a>
+            <a
+              th:href="@{/admin/users/delete/{id}(id=${user.id})}"
+              class="btn btn-danger btn-sm"
+              onclick="return confirm('Voulez-vous vraiment supprimer cet utilisateur ?')"
+            >
+              Supprimer
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenue sur la plateforme E-learning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .cover-container {
+            height: 100vh;
+            background: linear-gradient(to right, #286c8fe6, #95d3fc);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        .btn-custom {
+            background-color: #fff;
+            color: #0062E6;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="container-fluid cover-container">
+        <div >
+            <img  class="logo w-50" src="/images/logo-wbg.png" alt="Logo">
+        </div>
+    <div class="p-5">
+        <a th:href="@{/home}" class="btn btn-lg btn-light">Accueil</a>
+    </div>
+    <div class="container">
+        <h1 class="display-3 fw-bold">Bienvenue sur la plateforme E-learning</h1>
+        <p class="lead mt-3">Apprenez à votre rythme, où que vous soyez.</p>
+        <p class="lead">Accédez à des cours en ligne de qualité, encadrés par des professionnels.</p>
+        <div class="mt-4">
+            <a th:href="@{/auth/login}" class="btn btn-lg btn-custom me-3">Se connecter</a>
+            <a th:href="@{/auth/register}" class="btn btn-lg btn-light">S'inscrire</a>
+        </div>
+       
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+    

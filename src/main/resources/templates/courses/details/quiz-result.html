@@ -1,0 +1,8 @@
+<div th:fragment="quiz-result">
+<!-- src/main/resources/templates/courses/quiz-result.html -->
+<div class="card p-4 text-center">
+    <h3>Résultat du quiz</h3>
+    <p th:text="'Votre score : ' + ${score} + ' / ' + ${total}"></p>
+    <a th:href="@{/courses/{courseId}(courseId=${lesson.section.course.id})}" class="btn btn-success">Retour au cours</a>
+</div>
+</div>

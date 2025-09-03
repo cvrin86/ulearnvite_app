@@ -1,0 +1,35 @@
+<div th:fragment="content" >
+    <div class="container mt-4 my-5 py-5">
+        <div class="row">
+            <div class=" col-lg-12">
+    
+                <div th:replace="~{courses/details/course-header::course-header}"></div>
+            </div>
+            <!-- <div class="col-lg-4">
+               <div th:replace="~{courses/details/sidebar-inscription :: sidebar-inscription}"></div>
+            </div> -->
+
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-lg-8">
+                <div th:if="${quiz != null}">
+                    <div th:replace="~{courses/details/quiz :: quiz}"></div>
+                </div>
+                <div th:if="${score != null}">
+                    <div th:replace="~{courses/details/quiz-result :: quiz-result}"></div>
+                </div>
+                <div th:if="${quiz == null and score == null}">
+                    <div th:replace="~{courses/details/course-tabs :: course-tabs(${course}, ${instructor})}"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div th:replace="~{courses/details/course-outline :: course-outline(${course}, ${sections}, ${selectedLesson}, ${progress})}"></div>            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

@@ -1,0 +1,34 @@
+<div th:fragment="course-tabs(course,  instructor)">
+    <ul class="nav nav-tabs mb-3" id="courseTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="content-tab" data-bs-toggle="tab" data-bs-target="#content" type="button" role="tab" aria-controls="content" aria-selected="true">
+                📒 Contenu du cours
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link text-success" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">
+                💬 Avis et évaluations
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link text-success" id="instructor-tab" data-bs-toggle="tab" data-bs-target="#instructor" type="button" role="tab" aria-controls="instructor" aria-selected="false">
+                🗣️​ À propos du formateur
+            </button>
+        </li>
+    </ul>
+    <div class="tab-content" id="courseTabContent">
+        <!-- Contenu du cours -->
+        <div class="tab-pane fade show active" id="content" role="tabpanel" aria-labelledby="content-tab">
+            <div th:replace="~{courses/details/course-video :: course-video(${selectedLesson})}"></div>
+
+        </div>
+        <!-- Avis et évaluations -->
+        <!-- <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+            <div th:replace="components/reviews-block :: reviewsBlock(${reviews}, ${averageRating}, ${reviewsCount})"></div>
+        </div> -->
+        <!-- À propos du formateur -->
+        <div class="tab-pane fade" id="instructor" role="tabpanel" aria-labelledby="instructor-tab">
+            <div th:replace="courses/details/instructor-card :: instructorCard(${instructor})"></div>
+        </div>
+    </div>
+</div>

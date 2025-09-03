@@ -1,0 +1,190 @@
+/* -----------------------------
+   🌐 Styles Généraux du Site
+------------------------------ */
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color:#e5ebec;
+ 
+  
+ 
+}
+
+/* Titres */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: #053731;
+}
+
+/* Paragraphes */
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+a{
+	color: #40bfb0;
+	text-decoration:none;
+	
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------
+   📩 Formulaires
+------------------------------ */
+input, textarea, select {
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  font-size: 0.75rem;
+  color:#b8b8b8 !important;
+  opacity:0.8!important; /* pour que ça s'affiche sur tous les navigateurs */
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+/* -----------------------------
+   🔘 Boutons
+------------------------------ */
+button {
+  /* couleur verte menthe */
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease; /* Transition pour changer la couleur en douceur */
+}
+
+button:hover {
+  background-color: black; /* couleur noire au survol */
+  color: white; /* texte en blanc pour contraster */
+}
+/* Bouton de soumission */
+
+.submit-btn {
+  /* background-color: #C8E29D; */
+  background-color: #40bfb0;
+  color: white;
+  border: none;
+}
+
+.submit-btn:hover {
+  background-color: #F2F299 ;
+}
+
+/* Google et Facebook */
+.google-btn {
+  background-color: #db4437;
+  color: white;
+  border: none;
+}
+
+
+.facebook-btn {
+  background-color: #4267B2;
+  color: white;
+  border: none;
+}
+
+.google-btn:hover,
+.facebook-btn:hover {
+  opacity: 0.9;
+}
+
+/* -----------------------------
+   🖼️ Images & Layout
+------------------------------ */
+
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.learn-banner {
+  position: relative;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* ou une autre couleur selon ton image */
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0 2px 5px rgb(241, 241, 236);
+}
+
+.bg-nav{
+	background-color:#18343a;
+ 
+	
+}
+
+
+.bg-hero{
+  
+  background-color:hsl(192, 41%, 25%) ;
+  
+}
+
+
+
+/* -----------------------------
+   📱 Responsive rapide
+------------------------------ */
+
+
+	.logo{
+		max-width: 250px;
+		height:auto;
+	}
+
+@media (max-width: 768px) {
+  .logo {
+	max-width:190px;
+    height: auto; /* taille réduite sur mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+	max-width:120px;
+    height: auto; /* encore plus petit sur très petits écrans */
+  }
+}
+/* @media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    max-width: 120px;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+  }
+} */

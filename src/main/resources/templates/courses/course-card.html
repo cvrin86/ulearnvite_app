@@ -1,0 +1,11 @@
+<div th:fragment="courseCard(course)" class="col-md-6 col-lg-4">
+    <div class="card h-100 shadow-sm">
+        <img th:if="${course.imageUrl != null}" th:src="${course.imageUrl}" class="card-img-top" alt="Image du cours">
+        <img th:unless="${course.imageUrl != null}" th:src="'/images/courses/placeholder.png'" class="card-img-top" alt="Image par défaut">
+                        <div class="card-body">
+            <h5 class="card-title" th:text="${course.title}">Titre</h5>
+            <p class="card-text text-muted" th:text="${course.description}">Description</p>
+            <a th:href="@{'/courses/' + ${id}}" class="btn btn-outline-success btn-sm mt-2">Voir le cours</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div th:fragment="popularCourses">
+  <section class="py-5 bg-light">
+    <div class="container">
+      <!-- Titre -->
+      <div class="text-center mb-5">
+        <h2 class="h3 fw-bold text-dark mb-3">Cours populaires</h2>
+        <p class="text-muted">
+          Découvrez nos cours les plus appréciés par nos étudiants et commencez votre parcours d'apprentissage.
+        </p>
+      </div>
+
+      <!-- Cards -->
+      <div class="row g-4">
+        <!-- Inclusion des cartes de cours -->
+        <div th:each="course : ${popularCourses}" class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <!-- Image du cours, avec gestion de l'image manquante -->
+            <img
+            src="/images/courses/placeholder.png" 
+            class="card-img-top bg-secondary"
+            alt="Couverture du film"
+         />
+            <!-- <img th:if="${course.imageUrl != null}" th:src="${course.imageUrl}" class="card-img-top" alt="Image du cours"> -->
+
+            <div class="card-body">
+              <h5 class="card-title" th:text="${course.title}">Titre</h5>
+              <p class="card-text text-muted" th:text="${course.description}">Description</p>
+              <!-- <a th:href="@{/courses/{id}(id=${film.id})}" class="btn btn-success"            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouton pour voir tous les cours -->
+      <div class="text-center mt-5">
+        <a th:href="@{/courses}" class="btn btn-success">Voir tous les cours</a>
+      </div>
+    </div>
+  </section>
+</div>

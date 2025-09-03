@@ -1,0 +1,16 @@
+<div th:fragment="instructorCard(instructor)">
+    <div class="bg-white rounded border p-4 d-flex align-items-start">
+        <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center me-4" style="width:56px; height:56px; font-size:2rem;">
+            <span th:if="${instructor.profilePicture == null}" th:text="${instructor.username.substring(0,1).toUpperCase()}">S</span>
+            <img th:if="${instructor.profilePicture != null}" th:src="${instructor.profilePicture}" alt="Photo" class="rounded-circle" style="width:56px; height:56px;">
+        </div>
+        <div>
+            <h5 class="mb-1" th:text="${instructor.username}">Sophie Martin</h5>
+            <div class="text-muted mb-2">Expert en Développement Web</div>
+            <div th:text="${instructor.bio}">
+                Bio du formateur...
+            </div>
+            <a th:href="@{/instructors/{id}/courses(id=${instructor.id})}" class="btn btn-outline-success mt-3">Voir tous ses cours</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+
+<main th:fragment="content" class="d-flex align-items-center justify-content-center min-vh-100 bg-light">
+  <div class="container shadow-sm">
+    <div class="row shadow-sm rounded overflow-hidden">
+      
+      <!-- Formulaire -->
+      <div class="col-md-6 bg-white p-5 d-flex flex-column justify-content-center">
+        <form method="post" th:action="@{/auth/login}" th:object="${loginDTO}" novalidate>
+          <h1 class="text-center mb-4 fw-bold">Bienvenue à Ulevite Academy !</h1>
+          <h4 class="mb-4 text-secondary text-center">Se connecter</h4>
+
+          <!-- Nom d'utilisateur -->
+          <div class="mb-4">
+            <label for="username" class="form-label">Nom d'utilisateur</label>
+            <input type="text" th:field="*{username}" id="username" placeholder="Nom utilisateur" 
+                   class="form-control" 
+                   th:classappend="${#fields.hasErrors('username')} ? 'is-invalid' : ''" />
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+          </div>
+
+          <!-- Mot de passe -->
+          <div class="mb-4">
+            <label for="password" class="form-label">Mot de passe</label>
+            <input type="password" th:field="*{password}" id="password" placeholder="12 caractères minimum" 
+                   class="form-control" 
+                   th:classappend="${#fields.hasErrors('password')} ? 'is-invalid' : ''" />
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+          </div>
+
+          <!-- Erreur globale -->
+          <div th:if="${error}" class="alert alert-danger mt-3" th:text="${error}"></div>
+
+          <!-- Bouton -->
+          <div class="d-grid mt-4">
+            <button type="submit" class="btn submit-btn w-100 btn-lg">
+              <i class="fa fa-sign-in-alt me-2"></i> Se connecter
+            </button>
+          </div>
+        </form>
+
+        <p class="mt-4 text-center">
+          Vous n'avez pas encore de compte ? 
+          <a th:href="@{/auth/register}">Créez-en un !</a>
+        </p>
+      </div>
+
+      <!-- Partie image -->
+      <div class="col-md-6 d-none d-md-block p-0">
+        <img src="/images/login-picture.png" alt="Illustration learning" class="img-fluid h-100 w-100 object-fit-cover" />
+      </div>
+
+    </div>
+  </div>
+</main>
+
+
+

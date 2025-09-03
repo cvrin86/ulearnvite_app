@@ -1,0 +1,29 @@
+
+
+<div th:fragment="hero-section" class="py-5">
+
+
+    <section class="bg-gradient text-white py-5 text-center bg-hero">
+        <div class="container py-5 ">
+          <h1 class="display-4 fw-bold">
+            <span class="d-block text-white">Développez vos compétences</span>
+            <span class="d-block text-white">Enrichissez votre savoir</span>
+          </h1>
+          <p class="lead mt-4 mx-auto py-5" style="max-width: 900px;">
+            Découvrez notre sélection de cours en ligne pour vous former aux métiers d'aujourd'hui et de demain.
+            Apprenez à votre rythme et développez vos compétences.
+          </p>
+    
+          <div class="mt-5  d-flex flex-column flex-sm-row justify-content-center gap-3">
+            <a href="/courses" class="btn btn-lg btn-light px-5 py-3 d-flex align-items-center justify-content-center">
+              Explorer les cours
+              <i class="bi bi-chevron-right ms-2"></i>
+            </a>
+            <a th:href="@{/auth/register}" class="btn btn-lg btn-outline-light px-5 py-3">
+              S'inscrire gratuitement
+            </a>
+          </div>
+        </div>
+      </section>
+
+</div>

@@ -1,0 +1,54 @@
+<div th:fragment="content">
+    <div class="container mt-5 py-5">
+        <h2 class="m-4 p-5 text-center">Tous les Cours</h2>
+
+        <!-- Liste des cours -->
+        <div class="row">
+            <div class="col-12">
+                <!-- Grid de cours avec cartes -->
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" th:each="course : ${courses}">
+                        <div class="card">
+                            <img src="/images/courses/placeholder.png" 
+                                 class="card-img-top bg-secondary"
+                                 alt="Image du cours" />
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${course.title}">Titre du Cours</h5>
+                                <p class="card-text" th:text="${course.description}">Description du cours</p>
+                                <a th:href="@{/courses/{id}(id=${course.id})}" class="btn btn-success">Voir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav class="">
+            <ul class="pagination justify-content-center mt-4">
+                <!-- Précédent -->
+                <li class="page-item" th:if="${page > 0}">
+                    <a class="page-link text-success" th:href="@{/courses(page=${page - 1}, size=10)}" tabindex="-1">Précédent</a>
+                </li>
+
+                <!-- Pages -->
+                <li class="page-item"
+                th:each="i : ${#numbers.sequence(0, totalPages - 1)}"
+                th:classappend="${i == page} ? 'active'">
+                <a class="page-link"
+                   th:classappend="${i == page} ? 'text-white bg-success border-success' : 'text-success'"
+                   th:href="@{/courses(page=${i}, size=10)}"
+                   th:text="${i + 1}"></a>
+            </li>
+            
+
+                <!-- Suivant -->
+                <li class="page-item" th:if="${page < totalPages - 1}">
+                    <a class="page-link text-success" th:href="@{/courses(page=${page + 1}, size=10)}">Suivant</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
